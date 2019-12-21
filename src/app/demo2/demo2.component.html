@@ -1,0 +1,29 @@
+<hr>
+<div class="container">
+<h1>Second component done using CLI method</h1>
+<p>with command <code>ng g c component-name</code></p>
+
+<p class="my-2 text-italic">Links list </p>
+<li><a href="./demo2.component.html">Home</a></li>
+<li><a href="#">Contact</a></li>
+
+<!-- Interpolation  -->
+<p class=" my-3">Title and couurses by interpolation :</p>
+<p><b>Title:</b> {{ title }} </p>
+
+<p><b>Courses : </b> {{ courses }} </p>
+
+<p><b>Courselist from service : </b> {{ courselist }}</p>
+
+
+<!-- list item using ngfor -->
+<p><b>ngFor directive to iterate  ourse list</b></p>
+<ul>
+    <li *ngFor="let cors of courselist">{{cors}}</li>
+</ul>
+
+<p><b>Methods can also be used in Interpolation</b></p>
+{{greetings()}}
+</div>
+
+<hr>

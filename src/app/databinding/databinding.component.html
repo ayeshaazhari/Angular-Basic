@@ -1,0 +1,54 @@
+<div class="container my-3">
+<h1 class="text-center">Databinding Component </h1>
+<p>1. Property Binding</p>
+<p>2. Event Binding</p>
+<p>3. Interpolation</p>
+<p>4. Two way Binding</p>
+
+<!-- properety binding -->
+<h3 class="text-center my-3 ">1. Property Binding :</h3>
+<p>Image Src value assigned using Property binding</p>
+<img [src] = "imgscr">
+<h3 class="text-center my-3 ">1. Property Binding : </h3>
+<p>Image Src and id value  assigned using Property binding </p>
+<img [src] = "imgsrc2" [id]="imgid">
+
+<!-- Event bindingh -->
+<h3 class="text-center my-3 ">2. Event Binding :</h3>
+
+<input type="text" (keyup.enter)="getvalue(username.value)" (focus)="gotfocus()" (blur)="outofbox()" #username class="form-control w-50 my-3" placeholder="Click inside me and check console" >
+
+<p>Click me and check the console :
+<button (dblclick)="submit()" class="btn btn-success">Click Me</button>
+</p>
+
+<!-- interpolation -->
+<h3 class="text-center my-3 ">3. Interpolation: </h3>
+{{interpolationvalue}}
+
+<!-- two way binding -->
+<h3 class="text-center my-5 ">4. Two way Binding: </h3>
+<p><b> binding in AngularJS is the synchronization between the model and the view</b></p>
+<input type="password" [(ngModel)]="textval" class="form-control w-25">
+<p>Enter something inabove input box ...it will be updated here synchronously : {{textval}}</p>
+
+<p>Check me out
+<input type="checkbox" [(ngModel)]="checkedval"> :
+{{checkedval}}
+</p>
+<!--
+<input type="button" [(ngModel)]="btnval" placeholder="btn">
+{{btnval}} -->
+
+<p> Select category ; </p>
+<select [(ngModel)]="seleVal" class="form-control w-25" >
+    <option>Personal</option>
+    <option>Buisness</option>
+</select>
+<p> Selected Value is :
+{{seleVal}}
+</p>
+<!-- {{seleVal2}} -->
+
+</div>
+<hr>

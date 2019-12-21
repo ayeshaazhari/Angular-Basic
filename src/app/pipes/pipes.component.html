@@ -1,0 +1,54 @@
+<hr>
+<div class="container my-5">
+<h1 class="text-center">Pipes</h1>
+
+<p> <b>Number pipe with interpolation : </b>{{percentagevalue | number}}</p>
+
+<p> <b>Number pipe on direct value :</b> {{"1000000" | number}}</p>
+
+<p><b>Lowercase pipe ;</b> {{"FullStack" | lowercase}}</p>
+
+<p><b>Uppercase pipe :</b> {{"FullStack" | uppercase}}</p>
+
+<p><b>Percenteage pipe :</b> {{"30" | percent}}</p>
+
+<p><b>Currency pipe ;</b> {{"1000"| currency :"INR"}}</p>
+
+<p><b>Date pipe :</b> {{ date | date:'MM/yy/dd - hh-mm-ss'}}</p>
+
+<!-- 3.2-2 3 displays 3 befor decimal point if number has less than 3 appends 0 , .2 min , 2 max -->
+<p> <b>Decimal number pipe :</b> {{"3.88888866666" | number:'2.2'}}</p>
+
+<h3 class="my-2">Custom Pipe</h3>
+<!-- custom pipe -->
+<p #ptext>{{ "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae perferendis labore rem sequi doloremque voluptate. Ea dolorum fuga eligendi placeat animi quos explicabo, cumque, molestias voluptatem aspernatur deleniti quibusdam voluptates?Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam porro eos minus reprehenderit. Aspernatur, pariatur. Possimus, itaque error doloremque animi minus similique cumque labore architecto saepe fugit, suscipit minima. Amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus at maxime perspiciatis harum reprehenderit pariatur sed, maiores totam? Aliquam recusandae hic repudiandae reiciendis illo iste mollitia esse a amet minus?" | clippara }}
+</p>
+<button (click)="showpara(ptext)">Read more</button>
+<br><br>
+<p>Search done by using pipe </p><br>
+<input type="text" [(ngModel)]="searchvalue">
+
+
+<ul >
+    <li *ngFor = "let a of fruits| clipipe:searchvalue">{{a}}</li>
+</ul>
+
+
+<!--
+<input [ngModel]="ztext | zodiacpipe"
+      (ngModelChange)="ztext=$event" name="inputField"  type="text" #zsign/>
+      <p>{{zsign.value}}</p> -->
+<p class="container">Enter you Date of Birth here : </p>
+      <input type="text" [(ngModel)] = "search2">
+      <p [innerHTML]="yoursign | zodiacpipe:search2" class="badge badge-primary p-2 mx-5"></p>
+  <br>
+      <!-- <button class="btn btn-primary my-3">Click</button> -->
+<hr>
+
+<h4>Bootstrap classes : </h4>
+      <div class="row" style="border:1px solid red;">
+            <p class="col-4 ">pra1</p>
+            <p class="col-4">para2</p>
+            <p class="col-4">para3</p>
+      </div>
+</div>
